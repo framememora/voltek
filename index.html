@@ -208,6 +208,17 @@
   .fc-grid{ display:grid; grid-template-columns:1fr 1fr; gap:64px; }
   .fc-left h2{ font-size:clamp(2rem,4.4vw,3rem); color:var(--ink-text); margin-top:16px; max-width:14ch; }
   .fc-left p{ color:var(--muted-dark); margin-top:18px; max-width:42ch; font-size:1rem; line-height:1.6; }
+  .fc-next{ margin-top:40px; padding-top:30px; border-top:1px solid var(--line-dark); }
+  .fc-next h3{ font-family:'Plex Cond'; font-weight:700; font-size:1.15rem; letter-spacing:0.03em; text-transform:uppercase; color:var(--ink-text); margin:0 0 22px; }
+  .fc-steps{ list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:16px; counter-reset:step; }
+  .fc-steps li{ position:relative; padding-left:34px; max-width:44ch; font-size:0.95rem; line-height:1.6; color:var(--muted-dark); }
+  .fc-steps li::before{ counter-increment:step; content:counter(step); position:absolute; left:0; top:0.1em;
+    width:22px; height:22px; border-radius:50%; background:var(--volt-blue-deep); color:#fff;
+    font-family:'Plex Mono',monospace; font-size:0.72rem; display:flex; align-items:center; justify-content:center; }
+  .fc-steps li strong{ color:var(--ink-text); font-weight:600; }
+  .fc-contact{ margin-top:30px; display:flex; flex-direction:column; align-items:flex-start; gap:9px; font-family:'Plex Mono',monospace; font-size:0.85rem; color:var(--muted-dark); }
+  .fc-contact a{ color:var(--volt-blue-deep); text-decoration:none; border-bottom:1px solid rgba(11,102,144,0.4); }
+  .fc-contact a:hover{ color:var(--ink-text); border-bottom-color:var(--ink-text); }
   .qform{ background:var(--ink-2); border:1px solid var(--line-dark); border-radius:var(--radius); padding:34px; }
   .qform .ftitle{ font-family:'Plex Mono'; font-weight:700; font-size:1.2rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--volt-blue); }
   .field{ margin-top:20px; }
@@ -620,6 +631,19 @@
       <span class="eyebrow">Get In Touch</span>
       <h2>Request a Quote</h2>
       <p>Residential, commercial, or industrial solar — or any power-conversion need.</p>
+
+      <div class="fc-next">
+        <h3>What happens next</h3>
+        <ol class="fc-steps">
+          <li><strong>You send your details.</strong> Over WhatsApp or by email — whichever suits you.</li>
+          <li><strong>We reply on WhatsApp.</strong> We confirm coverage in your zone and agree a time.</li>
+          <li><strong>Free site visit and quote.</strong> We assess the roof, then quote with the subsidy applied.</li>
+        </ol>
+        <div class="fc-contact">
+          <a href="mailto:voltekindus@gmail.com">voltekindus@gmail.com</a>
+          <span>Panampilly Nagar, Ernakulam, Kerala</span>
+        </div>
+      </div>
     </div>
     <form class="qform" id="quoteForm">
       <div class="ftitle">Quote Request</div>
