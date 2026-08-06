@@ -32,7 +32,6 @@
   "name": "Voltek Industries",
   "image": "https://voltekindustries.co.in/voltek-logo.jpg",
   "url": "https://voltekindustries.co.in/",
-  "telephone": "+919846081688",
   "priceRange": "₹₹",
   "foundingDate": "1998",
   "areaServed": {
@@ -44,7 +43,10 @@
     "addressRegion": "Kerala",
     "addressCountry": "IN"
   },
-  "sameAs": []
+  "sameAs": [
+    "https://www.facebook.com/profile.php?id=100068878545702",
+    "https://www.instagram.com/voltek_01/"
+  ]
 }
 </script>
 
@@ -61,8 +63,9 @@
     --ink:#ffffff; --ink-2:#eef6fb; --steel:#dceefa; --steel-2:#c7e3f5;
     --line-dark:#b9d7ea; --paper:#f5fafd; --line-light:#d7e6ee;
     --paper-text:#0f202c; --ink-text:#0f202c;
-    --muted-dark:#5b7a8c; --muted-light:#5a6b76;
+    --muted-dark:#506a7c; --muted-light:#5a6b76;
     --volt-blue:#1e96c8; --volt-blue-deep:#0b6690; --volt-red:#cf4632; --brass:#c1912f;
+    --footer-navy:#0d3757;
     --radius:3px;
   }
   *,*::before,*::after{ box-sizing:border-box; }
@@ -75,8 +78,10 @@
   .wrap{ max-width:1180px; margin:0 auto; padding:0 24px; }
   a{ color:inherit; }
   button{ font-family:inherit; }
-  .eyebrow{ font-family:'Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--volt-blue); display:inline-flex; align-items:center; gap:0.5em; }
-  .eyebrow::before{ content:''; width:18px; height:1px; background:var(--volt-blue); display:inline-block; }
+  /* --volt-blue is 3.34:1 on white. That clears AA's 3:1 floor only for large text,
+     which WCAG defines as 14pt bold — 18.66px at weight 700. Hence 1.2rem/700. */
+  .eyebrow{ font-family:'Plex Mono',monospace; font-weight:700; font-size:1.2rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--volt-blue); display:inline-flex; align-items:center; gap:0.6em; }
+  .eyebrow::before{ content:''; width:26px; height:2px; background:var(--volt-blue); display:inline-block; }
 
   /* ===== HERO ===== */
   .hero{ position:relative; min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; background:#0f1317; }
@@ -85,12 +90,10 @@
     background:linear-gradient(180deg, rgba(15,19,23,0.42) 0%, rgba(15,19,23,0.5) 42%, rgba(15,19,23,0.97) 92%); }
   .hero-top{ position:relative; z-index:3; flex-shrink:0; display:flex; align-items:center; justify-content:space-between; padding:22px 24px; }
   .hero-top .brandmark{ display:flex; align-items:center; gap:11px; }
-  .hero-top .brandmark .logo-img{ height:42px; width:42px; object-fit:contain; border-radius:6px; background:#fff; padding:4px; box-shadow:0 2px 10px rgba(0,0,0,0.25); }
+  .hero-top .brandmark .logo-img{ height:62px; width:62px; object-fit:contain; border-radius:8px; background:#fff; padding:5px; box-shadow:0 2px 10px rgba(0,0,0,0.25); }
   .hero-top .brandname{ font-family:'Plex Cond'; font-weight:700; letter-spacing:0.06em; font-size:1.05rem; color:#fff; }
-  .hero-top .brandname .dot{ color:var(--volt-red); }
   footer .brandmark{ display:flex; align-items:center; gap:10px; }
-  footer .logo-img{ height:32px; width:32px; object-fit:contain; border-radius:5px; background:#fff; padding:3px; border:1px solid var(--line-light); }
-  .hero-top .tel{ font-family:'Plex Mono'; font-size:0.85rem; letter-spacing:0.02em; border:1px solid rgba(255,255,255,0.35); padding:7px 14px; border-radius:var(--radius); text-decoration:none; color:#fff; }
+  footer .logo-img{ height:52px; width:52px; object-fit:contain; border-radius:7px; background:#fff; padding:5px; border:1px solid var(--line-light); }
   .hero-body{ position:relative; z-index:3; padding:0 24px 40px; }
   .hero-body .inner{ max-width:1180px; margin:0 auto; }
   .hero h1{ font-size:clamp(2.6rem,7vw,5.2rem); line-height:0.98; font-weight:700; color:#fff; max-width:14ch; }
@@ -98,8 +101,6 @@
   .hero .sub{ margin-top:20px; max-width:46ch; font-size:1.05rem; line-height:1.55; color:#d7dde0; }
   .btn-primary{ background:var(--volt-red); color:#fff; border:none; padding:15px 30px; font-family:'Plex Mono'; font-size:0.85rem; letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; border-radius:var(--radius); display:inline-block; cursor:pointer; transition:background 0.15s ease, transform 0.15s ease; }
   .btn-primary:hover{ background:#b93a29; transform:translateY(-1px); }
-  .hero-cta{ margin-top:32px; display:flex; align-items:center; gap:22px; flex-wrap:wrap; }
-  .hero-cta .tel-inline{ font-family:'Plex Mono'; font-size:0.95rem; color:#d7dde0; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.35); padding-bottom:2px; }
 
   /* ===== ELIGIBILITY ===== */
   .eligibility{ background:var(--steel); padding:90px 0; }
@@ -121,12 +122,12 @@
   .pin-spinner{ width:34px; height:34px; animation:pinSpin 0.9s linear infinite; }
   @keyframes pinSpin{ to{ transform:rotate(360deg); } }
   .pin-success-msg{ display:flex; align-items:flex-start; gap:10px; font-size:0.95rem; color:var(--muted-light); margin-bottom:16px; }
-  .pin-success-msg strong{ color:#1a9e55; display:block; font-family:'Plex Sans'; }
+  .pin-success-msg strong{ color:#157f44; display:block; font-family:'Plex Sans'; }
   .pin-tick{ width:26px; height:26px; flex-shrink:0; margin-top:2px; }
   .pin-engine [hidden]{ display:none !important; }
 
-  .hero-trust{ display:flex; gap:24px; flex-wrap:wrap; margin-top:24px; }
-  .hero-trust li{ position:relative; padding-left:18px; font-family:'Plex Mono'; font-size:0.78rem; letter-spacing:0.02em; color:#d7dde0; }
+  .hero-trust{ display:flex; gap:24px; flex-wrap:wrap; margin-top:34px; }
+  .hero-trust li{ position:relative; padding-left:18px; font-family:'Plex Mono'; font-size:0.94rem; letter-spacing:0.02em; color:#d7dde0; }
   .hero-trust li::before{ content:''; position:absolute; left:0; top:0.5em; width:6px; height:6px; border-radius:50%; background:var(--volt-blue); }
 
   /* ===== TRUST ===== */
@@ -135,12 +136,14 @@
   .trust-head h2{ font-size:clamp(1.6rem,3.4vw,2.3rem); color:var(--ink-text); margin-top:14px; max-width:20ch; }
   .trust-head p{ color:var(--muted-dark); max-width:54ch; margin-top:12px; font-size:0.98rem; line-height:1.6; }
   .client-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line-dark); border:1px solid var(--line-dark); }
-  .client-cell{ position:relative; aspect-ratio:4/3; overflow:hidden; background:var(--ink-2); }
+  /* Dark fallback: the meta text is white over a darkened photo, so a failed image
+     load must not leave it sitting on a near-white cell. */
+  .client-cell{ position:relative; aspect-ratio:4/3; overflow:hidden; background:#12181d; }
   .client-cell img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:grayscale(1) contrast(1.05) brightness(0.62); transition:filter 0.35s ease, transform 0.6s ease; }
   .client-cell::after{ content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(18,24,29,0.15) 0%, rgba(18,24,29,0.85) 100%); mix-blend-mode:multiply; }
   .client-cell:hover img{ filter:grayscale(0) contrast(1) brightness(0.8); transform:scale(1.05); }
   .client-meta{ position:absolute; left:0; right:0; bottom:0; z-index:2; padding:16px 16px 14px; }
-  .client-meta .sector{ font-family:'Plex Mono'; font-size:0.6rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--volt-blue); }
+  .client-meta .sector{ font-family:'Plex Mono'; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--volt-blue); }
   .client-meta .cname{ font-family:'Plex Cond'; font-weight:600; text-transform:uppercase; font-size:1.02rem; line-height:1.05; color:#fff; margin-top:5px; letter-spacing:0.02em; }
 
   /* ===== STATS ===== */
@@ -156,8 +159,7 @@
   .section-head{ margin-bottom:52px; max-width:60ch; }
   .section-head h2{ font-size:clamp(1.8rem,3.6vw,2.6rem); color:var(--ink-text); margin-top:14px; }
   .section-head p{ color:var(--muted-dark); margin-top:14px; font-size:1rem; line-height:1.6; }
-  .svc-marquee{ overflow-x:auto; overflow-y:hidden; cursor:grab; scrollbar-width:none; -ms-overflow-style:none; -webkit-overflow-scrolling:touch;
-    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 48px,#000 calc(100% - 48px),transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 48px,#000 calc(100% - 48px),transparent 100%); }
+  .svc-marquee{ overflow-x:auto; overflow-y:hidden; cursor:grab; scrollbar-width:none; -ms-overflow-style:none; -webkit-overflow-scrolling:touch; }
   .svc-marquee::-webkit-scrollbar{ display:none; }
   .svc-marquee.dragging{ cursor:grabbing; user-select:none; }
   .svc-track{ display:flex; gap:1px; width:max-content; background:var(--line-dark); border-top:1px solid var(--line-dark); border-bottom:1px solid var(--line-dark); }
@@ -195,7 +197,7 @@
   .seal::before{ content:''; position:absolute; inset:10px; border:1px solid var(--brass); border-radius:50%; opacity:0.6; }
   .seal .seal-txt{ text-align:center; font-family:'Plex Cond'; color:var(--brass); }
   .seal .seal-txt .big{ font-size:1.5rem; font-weight:700; letter-spacing:0.02em; }
-  .seal .seal-txt .small{ font-family:'Plex Mono'; font-size:0.55rem; letter-spacing:0.14em; margin-top:4px; text-transform:uppercase; }
+  .seal .seal-txt .small{ font-family:'Plex Mono'; font-size:0.7rem; letter-spacing:0.1em; margin-top:5px; text-transform:uppercase; }
   .cert-copy .eyebrow{ color:var(--brass); }
   .cert-copy .eyebrow::before{ background:var(--brass); }
   .cert-copy h2{ color:#fff; font-size:clamp(1.9rem,4vw,2.8rem); margin-top:16px; max-width:16ch; }
@@ -206,26 +208,39 @@
   .fc-grid{ display:grid; grid-template-columns:1fr 1fr; gap:64px; }
   .fc-left h2{ font-size:clamp(2rem,4.4vw,3rem); color:var(--ink-text); margin-top:16px; max-width:14ch; }
   .fc-left p{ color:var(--muted-dark); margin-top:18px; max-width:42ch; font-size:1rem; line-height:1.6; }
-  .fc-phone{ margin-top:34px; display:inline-block; text-decoration:none; border:1px solid var(--line-dark); border-radius:var(--radius); padding:20px 26px; }
-  .fc-phone .lbl{ font-family:'Plex Mono'; font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted-dark); }
-  .fc-phone .num{ font-family:'Plex Mono'; font-weight:500; font-size:1.7rem; color:var(--ink-text); margin-top:6px; font-variant-numeric:tabular-nums; }
   .qform{ background:var(--ink-2); border:1px solid var(--line-dark); border-radius:var(--radius); padding:34px; }
-  .qform .ftitle{ font-family:'Plex Mono'; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--volt-blue); }
+  .qform .ftitle{ font-family:'Plex Mono'; font-weight:700; font-size:1.2rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--volt-blue); }
   .field{ margin-top:20px; }
-  .field label{ display:block; font-family:'Plex Mono'; font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted-dark); margin-bottom:8px; }
+  .field label{ display:block; font-family:'Plex Mono'; font-size:0.78rem; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted-dark); margin-bottom:8px; }
   .field input, .field textarea{ width:100%; background:transparent; border:none; border-bottom:1px solid var(--line-dark); color:var(--ink-text); font-family:'Plex Sans'; font-size:0.98rem; padding:8px 2px; outline:none; border-radius:0; }
   .field input:focus, .field textarea:focus{ border-bottom-color:var(--volt-blue); }
   .field textarea{ resize:vertical; min-height:64px; }
   .qform .submit{ margin-top:26px; width:100%; }
   .qform .note{ margin-top:14px; font-size:0.78rem; color:var(--muted-dark); font-family:'Plex Mono'; }
 
-  footer{ background:var(--ink); border-top:1px solid var(--line-dark); padding:28px 0; }
-  footer .wrap{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; }
-  footer .mono{ font-size:0.78rem; color:var(--muted-dark); letter-spacing:0.02em; }
-  footer .footer-bottom{ margin-top:20px; padding-top:20px; border-top:1px solid var(--line-dark); justify-content:center; }
-  footer .footer-bottom .mono{ font-size:0.72rem; opacity:0.8; }
+  footer{ background:var(--footer-navy); color:#c9dded; padding:66px 0 0; }
+  footer a{ color:inherit; text-decoration:none; transition:color 0.15s ease; }
+  footer a:hover{ color:#fff; }
+  footer a:focus-visible{ outline:2px solid var(--volt-blue); outline-offset:3px; }
+  .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1.15fr 1.15fr; gap:40px; align-items:start; }
+  .footer-brandname{ font-family:'Plex Cond'; font-weight:700; letter-spacing:0.06em; font-size:1.15rem; color:#fff; }
+  .footer-blurb{ margin-top:20px; font-size:0.92rem; line-height:1.75; color:#9fbdd4; max-width:36ch; }
+  .footer-col h3{ font-family:'Plex Mono',monospace; font-weight:500; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#fff; margin:0; }
+  .footer-col ul{ list-style:none; margin:20px 0 0; padding:0; display:flex; flex-direction:column; gap:13px; }
+  .footer-col li{ font-size:0.92rem; line-height:1.5; color:#9fbdd4; }
+  footer .footer-bottom{ margin-top:56px; padding:20px 0 24px; border-top:1px solid rgba(255,255,255,0.13);
+    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
+  footer .footer-bottom .mono{ font-family:'Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.02em; color:#8badc6; }
+
+  @media (max-width: 1040px){
+    .footer-grid{ grid-template-columns:1fr 1fr; gap:36px 40px; }
+  }
 
   @media (max-width: 860px){
+    /* The hero clip is 960x464; cover-cropping it to a portrait phone upscales a ~22% wide
+       slice by ~5.5x. The 1600x1065 poster crops to roughly half that, so show it instead. */
+    .hero-video{ display:none; }
+    .hero{ background-image:url(assets/images/hero-poster.jpg); background-size:cover; background-position:center; background-repeat:no-repeat; }
     .client-grid{ grid-template-columns:repeat(2,1fr); }
     .stats-grid{ grid-template-columns:repeat(2,1fr); }
     .case, .case.rev{ grid-template-columns:1fr; }
@@ -247,9 +262,8 @@
   /* ===== PHONE (narrow) ===== */
   @media (max-width:560px){
     .hero-top{ padding:16px; }
-    .hero-top .brandmark .logo-img{ height:36px; width:36px; }
+    .hero-top .brandmark .logo-img{ height:50px; width:50px; }
     .hero-top .brandname{ display:none; }
-    .hero-top .tel{ font-size:0.72rem; padding:6px 10px; letter-spacing:0; }
     .hero-body{ padding:0 18px 32px; }
     .hero h1{ font-size:clamp(2.1rem,9.5vw,2.6rem); max-width:100%; }
     .hero .sub{ max-width:100%; }
@@ -263,19 +277,28 @@
     .client-grid{ grid-template-columns:1fr; }
     .stats-grid{ grid-template-columns:1fr; }
     .qform{ padding:22px; }
-    .fc-phone{ padding:16px 20px; }
+    .footer-grid{ grid-template-columns:1fr; gap:34px; }
+    footer{ padding-top:48px; }
+    /* Extra bottom room: the floating buttons are fixed over this strip at full scroll. */
+    footer .footer-bottom{ margin-top:40px; padding-bottom:84px; justify-content:flex-start; gap:8px; flex-direction:column; align-items:flex-start; }
     .seal{ width:132px; height:132px; }
     .case-media img{ height:200px; }
     .svc-card{ flex:0 0 78vw; width:78vw; }
     .svc-media{ height:150px; }
-    .svc-marquee{ -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 20px,#000 calc(100% - 20px),transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 20px,#000 calc(100% - 20px),transparent 100%); }
     .pin-row input, .field input, .field textarea, .pin-row select{ font-size:16px; }
-    .hero-top .tel{ min-height:32px; display:inline-flex; align-items:center; }
-    .hero-cta{ gap:16px; }
     .btn-primary{ padding:14px 26px; }
   }
-  /* ===== WHATSAPP FAB ===== */
-  .wa-fab{ position:fixed; right:22px; bottom:22px; z-index:60; display:flex; align-items:center; text-decoration:none;
+  /* ===== FLOATING CONTACT / SOCIAL STACK ===== */
+  .fab-stack{ position:fixed; right:22px; bottom:22px; z-index:60; display:flex; flex-direction:column; align-items:flex-end; gap:12px; }
+  .fab-social{ display:flex; align-items:center; justify-content:center; width:46px; height:46px; border-radius:999px;
+    color:#fff; text-decoration:none; border:1px solid rgba(255,255,255,0.14); box-shadow:0 6px 22px rgba(0,0,0,0.4);
+    transition:transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease; }
+  .fab-social svg{ width:23px; height:23px; }
+  .fab-fb{ background:#1877f2; }
+  .fab-ig{ background:radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+  .fab-social:hover{ transform:translateY(-2px); filter:brightness(1.08); box-shadow:0 9px 28px rgba(0,0,0,0.5); }
+  .fab-social:focus-visible{ outline:2px solid #fff; outline-offset:3px; }
+  .wa-fab{ display:flex; align-items:center; text-decoration:none;
     flex-direction:row-reverse; background:#1faa52; color:#fff; height:56px; width:56px; border-radius:999px; overflow:hidden;
     box-shadow:0 6px 22px rgba(0,0,0,0.4); border:1px solid rgba(255,255,255,0.14);
     transition:width 0.3s cubic-bezier(0.22,0.61,0.36,1), box-shadow 0.2s ease, background 0.2s ease; }
@@ -285,33 +308,44 @@
   .wa-fab:hover{ width:196px; background:#25d366; box-shadow:0 9px 28px rgba(0,0,0,0.5); }
   .wa-fab:hover .wa-label{ opacity:1; }
   .wa-fab:focus-visible{ outline:2px solid #fff; outline-offset:3px; }
-  @media (max-width:860px){ .wa-fab{ right:16px; bottom:16px; } .wa-fab:hover{ width:56px; } .wa-fab:hover .wa-label{ opacity:0; } }
+  /* On a phone a 3-high vertical stack occupied 160px — 22% of the screen — down the
+     right edge of every section. A row is 52px tall and only shadows the bottom strip. */
+  @media (max-width:860px){
+    .fab-stack{ right:14px; bottom:14px; flex-direction:row; align-items:center; gap:10px; }
+    .fab-social{ width:44px; height:44px; }
+    .fab-social svg{ width:22px; height:22px; }
+    .wa-fab{ width:52px; height:52px; }
+    .wa-fab .wa-ico{ flex:0 0 52px; width:52px; height:52px; }
+    .wa-fab:hover{ width:52px; } .wa-fab:hover .wa-label{ opacity:0; }
+  }
 
-  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } *{ transition:none !important; animation:none !important; } .svc-marquee{ overflow-x:auto; -webkit-mask-image:none; mask-image:none; } }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } *{ transition:none !important; animation:none !important; } .svc-marquee{ overflow-x:auto; } }
 </style>
 
 <section class="hero">
   <video class="hero-video" autoplay muted loop playsinline poster="assets/images/hero-poster.jpg">
     <source src="assets/video/hero-video.mp4" type="video/mp4" />
   </video>
+  <script>
+    /* Drop the hero clip on phones before it downloads — it is hidden there by CSS,
+       and the CSS poster background is sharper. Saves ~2.4MB on mobile data. */
+    if (window.matchMedia('(max-width: 860px)').matches) {
+      var hv = document.currentScript.previousElementSibling;
+      if (hv && hv.tagName === 'VIDEO') { hv.removeAttribute('autoplay'); hv.remove(); }
+    }
+  </script>
   <div class="hero-scrim"></div>
   <div class="hero-top">
     <div class="brandmark">
       <img class="logo-img" src="voltek-logo.jpg" alt="Voltek Industries logo">
-      <span class="brandname">VOLTEK<span class="dot">.</span> INDUSTRIES</span>
+      <span class="brandname">VOLTEK INDUSTRIES</span>
     </div>
-    <a class="tel mono" href="tel:+919846081688">+91 98460 81688</a>
   </div>
   <div class="hero-body">
     <div class="inner">
       <span class="eyebrow">SOLAR · INVERTERS · POWER CONVERSION — EST. 1998</span>
       <h1>Slash Your KSEB Bills. <em>Permanently.</em></h1>
       <p class="sub">Lock in near-zero electricity bills and claim up to <strong>₹78,000</strong> in central government solar subsidies.</p>
-
-      <div class="hero-cta">
-        <a href="#eligibility" class="btn-primary">Check Eligibility</a>
-        <a href="tel:+919846081688" class="tel-inline mono">or call +91 98460 81688</a>
-      </div>
 
       <ul class="hero-trust">
         <li>PM Surya Ghar registered</li>
@@ -353,7 +387,7 @@
 
         <div class="pin-step pin-step-success" id="pinStepSuccess" hidden>
           <p class="pin-success-msg">
-            <svg viewBox="0 0 24 24" fill="none" class="pin-tick"><circle cx="12" cy="12" r="11" fill="#e3f5ea"/><path d="m7.5 12.5 3 3 6-7" stroke="#1a9e55" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" class="pin-tick"><circle cx="12" cy="12" r="11" fill="#e3f5ea"/><path d="m7.5 12.5 3 3 6-7" stroke="#157f44" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <strong>Success! Your zone is within our coverage area.</strong>
             Your property qualifies for the PM Surya Ghar Subsidy.
           </p>
@@ -373,9 +407,8 @@
 <section class="services" id="services">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">What We Build</span>
-      <h2>Solar systems, engineered — not resold</h2>
-      <p>28 years of power-conversion engineering. Solar came second.</p>
+      <span class="eyebrow">Our Clients</span>
+      <h2>Who we build for</h2>
     </div>
     <div class="svc-marquee">
       <div class="svc-track">
@@ -405,7 +438,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="https://images.pexels.com/photos/19368755/pexels-photo-19368755/free-photo-of-glass-building-entrance.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Automatic sliding door entrance" /></div>
+        <div class="svc-media"><img src="https://images.pexels.com/photos/19368755/pexels-photo-19368755/free-photo-of-glass-building-entrance.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Automatic sliding door entrance" /></div>
         <div class="svc-inner">
           <span class="tag">04 / Doors</span>
           <h3>Automatic Doors</h3>
@@ -413,7 +446,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="https://images.pexels.com/photos/37486743/pexels-photo-37486743/free-photo-of-elegant-iron-gate-with-historical-architecture.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Automatic gate at a property entrance" /></div>
+        <div class="svc-media"><img src="https://images.pexels.com/photos/37486743/pexels-photo-37486743/free-photo-of-elegant-iron-gate-with-historical-architecture.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Automatic gate at a property entrance" /></div>
         <div class="svc-inner">
           <span class="tag">05 / Gates</span>
           <h3>Automatic Gates</h3>
@@ -421,7 +454,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="https://images.pexels.com/photos/20522279/pexels-photo-20522279/free-photo-of-closed-roller-shutter-door.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Automatic roller shutter door" /></div>
+        <div class="svc-media"><img src="https://images.pexels.com/photos/20522279/pexels-photo-20522279/free-photo-of-closed-roller-shutter-door.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Automatic roller shutter door" /></div>
         <div class="svc-inner">
           <span class="tag">06 / Shutters</span>
           <h3>Shutters &amp; Roofs</h3>
@@ -455,7 +488,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="https://images.pexels.com/photos/19368755/pexels-photo-19368755/free-photo-of-glass-building-entrance.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Automatic sliding door entrance" /></div>
+        <div class="svc-media"><img src="https://images.pexels.com/photos/19368755/pexels-photo-19368755/free-photo-of-glass-building-entrance.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Automatic sliding door entrance" /></div>
         <div class="svc-inner">
           <span class="tag">04 / Doors</span>
           <h3>Automatic Doors</h3>
@@ -463,7 +496,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="https://images.pexels.com/photos/37486743/pexels-photo-37486743/free-photo-of-elegant-iron-gate-with-historical-architecture.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Automatic gate at a property entrance" /></div>
+        <div class="svc-media"><img src="https://images.pexels.com/photos/37486743/pexels-photo-37486743/free-photo-of-elegant-iron-gate-with-historical-architecture.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Automatic gate at a property entrance" /></div>
         <div class="svc-inner">
           <span class="tag">05 / Gates</span>
           <h3>Automatic Gates</h3>
@@ -471,7 +504,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="https://images.pexels.com/photos/20522279/pexels-photo-20522279/free-photo-of-closed-roller-shutter-door.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Automatic roller shutter door" /></div>
+        <div class="svc-media"><img src="https://images.pexels.com/photos/20522279/pexels-photo-20522279/free-photo-of-closed-roller-shutter-door.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Automatic roller shutter door" /></div>
         <div class="svc-inner">
           <span class="tag">06 / Shutters</span>
           <h3>Shutters &amp; Roofs</h3>
@@ -587,10 +620,6 @@
       <span class="eyebrow">Get In Touch</span>
       <h2>Request a Quote</h2>
       <p>Residential, commercial, or industrial solar — or any power-conversion need.</p>
-      <a class="fc-phone" href="tel:+919846081688">
-        <div class="lbl">Call Direct</div>
-        <div class="num">+91 98460 81688</div>
-      </a>
     </div>
     <form class="qform" id="quoteForm">
       <div class="ftitle">Quote Request</div>
@@ -605,17 +634,58 @@
 </section>
 
 <footer>
-  <div class="wrap">
-    <div class="brandmark">
-      <img class="logo-img" src="voltek-logo.jpg" alt="Voltek Industries logo">
-      <span class="mono">VOLTEK INDUSTRIES · EST. 1998 · ISO 9001 CERTIFIED</span>
+  <div class="wrap footer-grid">
+
+    <div class="footer-brand">
+      <div class="brandmark">
+        <img class="logo-img" src="voltek-logo.jpg" alt="Voltek Industries logo">
+        <span class="footer-brandname">VOLTEK INDUSTRIES</span>
+      </div>
+      <p class="footer-blurb">Solar &amp; power-conversion engineering for Kerala since 1998. ISO 9001 certified.</p>
     </div>
-    <a class="mono" href="tel:+919846081688" style="text-decoration:none;">+91 98460 81688</a>
+
+    <div class="footer-col">
+      <h3>Explore</h3>
+      <ul>
+        <li><a href="#eligibility">Check Eligibility</a></li>
+        <li><a href="#services">Our Clients</a></li>
+        <li><a href="#projects">Recent Work</a></li>
+        <li><a href="#quote">Request a Quote</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Head Office</h3>
+      <ul>
+        <li>Panampilly Nagar,<br>Ernakulam, Kerala</li>
+        <li><a href="mailto:voltekindus@gmail.com">voltekindus@gmail.com</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Branch</h3>
+      <ul>
+        <!-- TODO: replace with the real branch address before this goes live -->
+        <li>Branch address to be added</li>
+      </ul>
+    </div>
+
   </div>
   <div class="wrap footer-bottom">
     <span class="mono">© <span id="copyYear">2026</span> Voltek Industries. All rights reserved.</span>
+    <span class="mono">PM Surya Ghar Registered Vendor</span>
   </div>
 </footer>
+
+<div class="fab-stack">
+
+<a class="fab-social fab-ig" href="https://www.instagram.com/voltek_01/" target="_blank" rel="noopener noreferrer" aria-label="Voltek Industries on Instagram">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.12 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.38 2.12.66.66 1.33 1.08 2.12 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.12-1.38.66-.66 1.08-1.33 1.38-2.12.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.38-2.12C21.32 1.35 20.65.94 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0z"/><path d="M12 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zM12 16a4 4 0 1 1 4-4 4 4 0 0 1-4 4z"/><circle cx="18.41" cy="5.59" r="1.44"/></svg>
+</a>
+
+<a class="fab-social fab-fb" href="https://www.facebook.com/profile.php?id=100068878545702" target="_blank" rel="noopener noreferrer" aria-label="Voltek Industries on Facebook">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.25h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+</a>
 
 <a class="wa-fab" href="https://wa.me/919846081688?text=Hi%20Voltek%2C%20I%27d%20like%20a%20quote%20for%20a%20solar%20installation." target="_blank" rel="noopener noreferrer" aria-label="Chat with Voltek on WhatsApp">
   <span class="wa-ico" aria-hidden="true">
@@ -623,6 +693,8 @@
   </span>
   <span class="wa-label">WhatsApp us</span>
 </a>
+
+</div>
 
 <script>
   (function(){

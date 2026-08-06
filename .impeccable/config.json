@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "layout-transition",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-08-06T09:55:08.052Z",
+        "reason": "WhatsApp FAB pill expands 56px to 196px on hover to reveal its label; width is the effect. Single position:fixed element with overflow:hidden, so layout stays in its own subtree."
+      }
+    ]
+  }
+}
