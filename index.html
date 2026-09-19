@@ -20,13 +20,15 @@
 <meta property="og:title" content="Voltek Industries — Solar & Power Conversion Since 1998">
 <meta property="og:description" content="Slash your KSEB bills permanently. ISO 9001 certified solar &amp; power-conversion engineering across Kerala since 1998 — 35,000+ installations, up to ₹78,000 in PM Surya Ghar subsidy.">
 <meta property="og:url" content="https://voltekindustries.co.in/">
-<meta property="og:image" content="https://voltekindustries.co.in/voltek-logo.jpg">
+<meta property="og:image" content="https://voltekindustries.co.in/assets/images/hero-poster.jpg">
+<meta property="og:image:width" content="1600">
+<meta property="og:image:height" content="1065">
 <meta property="og:locale" content="en_IN">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Voltek Industries — Solar & Power Conversion Since 1998">
 <meta name="twitter:description" content="Slash your KSEB bills permanently. ISO 9001 certified solar &amp; power-conversion engineering across Kerala since 1998.">
-<meta name="twitter:image" content="https://voltekindustries.co.in/voltek-logo.jpg">
+<meta name="twitter:image" content="https://voltekindustries.co.in/assets/images/hero-poster.jpg">
 
 <script type="application/ld+json">
 {
@@ -35,6 +37,7 @@
   "name": "Voltek Industries",
   "image": "https://voltekindustries.co.in/voltek-logo.jpg",
   "url": "https://voltekindustries.co.in/",
+  "email": "voltekindus@gmail.com",
   "priceRange": "₹₹",
   "foundingDate": "1998",
   "areaServed": {
@@ -43,6 +46,8 @@
   },
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Panampilly Nagar",
+    "addressLocality": "Ernakulam",
     "addressRegion": "Kerala",
     "addressCountry": "IN"
   },
@@ -86,10 +91,13 @@
   .wrap{ max-width:1180px; margin:0 auto; padding:0 24px; }
   a{ color:inherit; }
   button{ font-family:inherit; }
-  /* --volt-blue is 3.34:1 on white. That clears AA's 3:1 floor only for large text,
-     which WCAG defines as 14pt bold — 18.66px at weight 700. Hence 1.2rem/700. */
-  .eyebrow{ font-family:'Plex Mono',monospace; font-weight:700; font-size:1.2rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--volt-blue); display:inline-flex; align-items:center; gap:0.6em; }
-  .eyebrow::before{ content:''; width:26px; height:2px; background:var(--volt-blue); display:inline-block; }
+  /* --volt-blue is only ~2.7:1 on --steel, below even the large-text 3:1 floor, so light
+     sections use --volt-blue-deep (6.3:1 on white, 5.3:1 on steel). The dark hero keeps
+     the brighter blue; the cert section overrides to brass. */
+  .eyebrow{ font-family:'Plex Mono',monospace; font-weight:700; font-size:1.2rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--volt-blue-deep); display:inline-flex; align-items:center; gap:0.6em; }
+  .eyebrow::before{ content:''; width:26px; height:2px; background:var(--volt-blue-deep); display:inline-block; }
+  .hero .eyebrow{ color:var(--volt-blue); }
+  .hero .eyebrow::before{ background:var(--volt-blue); }
 
   /* ===== HERO ===== */
   .hero{ position:relative; min-height:100vh; display:flex; flex-direction:column; justify-content:space-between; overflow:hidden; background:#0f1317; }
@@ -122,8 +130,7 @@
   .pin-row input::placeholder{ color:#8aa2ba; }
   .pin-row input:focus{ border-color:var(--volt-blue); box-shadow:0 0 0 3px rgba(30,150,200,0.18); }
   .pin-row .btn-primary{ white-space:nowrap; }
-  .pin-error{ color:#e2685c; font-size:0.82rem; margin-top:8px; min-height:1em; font-family:'Plex Sans'; }
-  .pin-step-input .pin-error{ color:#c93b3b; }
+  .pin-error{ color:#c93b3b; font-size:0.82rem; margin-top:8px; min-height:1em; font-family:'Plex Sans'; }
   .pin-step{ animation:pinStepIn 0.35s ease; }
   @keyframes pinStepIn{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:none; } }
   .pin-step-loading{ display:flex; align-items:center; gap:14px; color:var(--muted-light); font-size:0.95rem; font-weight:500; padding:6px 2px; }
@@ -177,7 +184,7 @@
   .svc-media img{ width:100%; height:100%; object-fit:cover; transition:transform 0.6s ease; }
   .svc-card:hover .svc-media img{ transform:scale(1.05); }
   .svc-inner{ padding:28px; display:flex; flex-direction:column; flex:1; }
-  .svc-card .tag{ font-family:'Plex Mono'; font-size:0.68rem; letter-spacing:0.1em; color:var(--volt-blue); text-transform:uppercase; }
+  .svc-card .tag{ font-family:'Plex Mono'; font-size:0.68rem; letter-spacing:0.1em; color:var(--volt-blue-deep); text-transform:uppercase; }
   .svc-card h3{ color:var(--ink-text); font-size:1.45rem; margin-top:12px; }
   .svc-card p{ color:var(--muted-light); margin-top:13px; font-size:0.93rem; line-height:1.62; flex:1; }
 
@@ -241,13 +248,14 @@
   footer a{ color:inherit; text-decoration:none; transition:color 0.15s ease; }
   footer a:hover{ color:#fff; }
   footer a:focus-visible{ outline:2px solid var(--volt-blue); outline-offset:3px; }
-  .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1.15fr 1.15fr; gap:40px; align-items:start; }
+  .footer-grid{ display:grid; grid-template-columns:1.6fr 1fr 1.15fr; gap:40px; align-items:start; }
   .footer-brandname{ font-family:'Plex Cond'; font-weight:700; letter-spacing:0.06em; font-size:1.15rem; color:#fff; }
   .footer-blurb{ margin-top:20px; font-size:0.92rem; line-height:1.75; color:#9fbdd4; max-width:36ch; }
   .footer-col h3{ font-family:'Plex Mono',monospace; font-weight:500; font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase; color:#fff; margin:0; }
   .footer-col ul{ list-style:none; margin:20px 0 0; padding:0; display:flex; flex-direction:column; gap:13px; }
   .footer-col li{ font-size:0.92rem; line-height:1.5; color:#9fbdd4; }
-  footer .footer-bottom{ margin-top:56px; padding:20px 0 24px; border-top:1px solid rgba(255,255,255,0.13);
+  /* Top/bottom only: a padding shorthand here would zero .wrap's side gutter. */
+  footer .footer-bottom{ margin-top:56px; padding-top:20px; padding-bottom:24px; border-top:1px solid rgba(255,255,255,0.13);
     display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; }
   footer .footer-bottom .mono{ font-family:'Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.02em; color:#8badc6; }
 
@@ -304,7 +312,7 @@
     .case-media img{ height:200px; }
     .svc-card{ flex:0 0 78vw; width:78vw; }
     .svc-media{ height:150px; }
-    .pin-row input, .field input, .field textarea, .pin-row select{ font-size:16px; }
+    .pin-row input, .field input, .field textarea{ font-size:16px; }
     .btn-primary{ padding:14px 26px; }
   }
   /* ===== FLOATING CONTACT / SOCIAL STACK ===== */
@@ -428,14 +436,14 @@
 <section class="services" id="services">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Our Clients</span>
-      <h2>Who we build for</h2>
+      <span class="eyebrow">What We Do</span>
+      <h2>What we build</h2>
     </div>
     <div class="svc-marquee">
       <div class="svc-track">
         <div class="svc-run"><!--SVC_RUN_START-->
           <div class="svc-card">
-        <div class="svc-media"><img src="assets/images/solar-panel-installation.jpg" alt="Solar panel installation on a roof" /></div>
+        <div class="svc-media"><img loading="lazy" decoding="async" src="assets/images/solar-panel-installation.jpg" alt="Solar panel installation on a roof" /></div>
         <div class="svc-inner">
           <span class="tag">01 / Solar</span>
           <h3>Solar Panel Installation</h3>
@@ -443,7 +451,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="assets/images/inverters.jpg" alt="Solar inverter and energy storage system" /></div>
+        <div class="svc-media"><img loading="lazy" decoding="async" src="assets/images/inverters.jpg" alt="Solar inverter and energy storage system" /></div>
         <div class="svc-inner">
           <span class="tag">02 / Conversion</span>
           <h3>Inverters</h3>
@@ -451,7 +459,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="assets/images/power-conversion-heritage.jpg" alt="Electrical control and power conversion equipment" /></div>
+        <div class="svc-media"><img loading="lazy" decoding="async" src="assets/images/power-conversion-heritage.jpg" alt="Electrical control and power conversion equipment" /></div>
         <div class="svc-inner">
           <span class="tag">03 / Heritage</span>
           <h3>Power Conversion Heritage</h3>
@@ -459,7 +467,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="https://images.pexels.com/photos/19368755/pexels-photo-19368755/free-photo-of-glass-building-entrance.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Automatic sliding door entrance" /></div>
+        <div class="svc-media"><img loading="lazy" decoding="async" src="assets/images/automatic-doors.jpg" alt="Automatic sliding door entrance" /></div>
         <div class="svc-inner">
           <span class="tag">04 / Doors</span>
           <h3>Automatic Doors</h3>
@@ -467,7 +475,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="https://images.pexels.com/photos/37486743/pexels-photo-37486743/free-photo-of-elegant-iron-gate-with-historical-architecture.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Automatic gate at a property entrance" /></div>
+        <div class="svc-media"><img loading="lazy" decoding="async" src="assets/images/automatic-gates.jpg" alt="Automatic gate at a property entrance" /></div>
         <div class="svc-inner">
           <span class="tag">05 / Gates</span>
           <h3>Automatic Gates</h3>
@@ -475,7 +483,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="https://images.pexels.com/photos/20522279/pexels-photo-20522279/free-photo-of-closed-roller-shutter-door.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Automatic roller shutter door" /></div>
+        <div class="svc-media"><img loading="lazy" decoding="async" src="assets/images/shutters-roofs.jpg" alt="Automatic roller shutter door" /></div>
         <div class="svc-inner">
           <span class="tag">06 / Shutters</span>
           <h3>Shutters &amp; Roofs</h3>
@@ -485,7 +493,7 @@
       <!--SVC_RUN_END--></div>
       <div class="svc-run" aria-hidden="true">
           <div class="svc-card">
-        <div class="svc-media"><img src="assets/images/solar-panel-installation.jpg" alt="Solar panel installation on a roof" /></div>
+        <div class="svc-media"><img loading="lazy" decoding="async" src="assets/images/solar-panel-installation.jpg" alt="Solar panel installation on a roof" /></div>
         <div class="svc-inner">
           <span class="tag">01 / Solar</span>
           <h3>Solar Panel Installation</h3>
@@ -493,7 +501,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="assets/images/inverters.jpg" alt="Solar inverter and energy storage system" /></div>
+        <div class="svc-media"><img loading="lazy" decoding="async" src="assets/images/inverters.jpg" alt="Solar inverter and energy storage system" /></div>
         <div class="svc-inner">
           <span class="tag">02 / Conversion</span>
           <h3>Inverters</h3>
@@ -501,7 +509,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="assets/images/power-conversion-heritage.jpg" alt="Electrical control and power conversion equipment" /></div>
+        <div class="svc-media"><img loading="lazy" decoding="async" src="assets/images/power-conversion-heritage.jpg" alt="Electrical control and power conversion equipment" /></div>
         <div class="svc-inner">
           <span class="tag">03 / Heritage</span>
           <h3>Power Conversion Heritage</h3>
@@ -509,7 +517,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="https://images.pexels.com/photos/19368755/pexels-photo-19368755/free-photo-of-glass-building-entrance.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Automatic sliding door entrance" /></div>
+        <div class="svc-media"><img loading="lazy" decoding="async" src="assets/images/automatic-doors.jpg" alt="Automatic sliding door entrance" /></div>
         <div class="svc-inner">
           <span class="tag">04 / Doors</span>
           <h3>Automatic Doors</h3>
@@ -517,7 +525,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="https://images.pexels.com/photos/37486743/pexels-photo-37486743/free-photo-of-elegant-iron-gate-with-historical-architecture.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Automatic gate at a property entrance" /></div>
+        <div class="svc-media"><img loading="lazy" decoding="async" src="assets/images/automatic-gates.jpg" alt="Automatic gate at a property entrance" /></div>
         <div class="svc-inner">
           <span class="tag">05 / Gates</span>
           <h3>Automatic Gates</h3>
@@ -525,7 +533,7 @@
         </div>
       </div>
       <div class="svc-card">
-        <div class="svc-media"><img src="https://images.pexels.com/photos/20522279/pexels-photo-20522279/free-photo-of-closed-roller-shutter-door.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="Automatic roller shutter door" /></div>
+        <div class="svc-media"><img loading="lazy" decoding="async" src="assets/images/shutters-roofs.jpg" alt="Automatic roller shutter door" /></div>
         <div class="svc-inner">
           <span class="tag">06 / Shutters</span>
           <h3>Shutters &amp; Roofs</h3>
@@ -541,7 +549,7 @@
 <section class="stats">
   <div class="wrap">
     <div class="stats-grid">
-      <div class="stat-cell"><div class="n"><span class="accent counter" data-count="28">0</span>+</div><div class="l">Years in Power Conversion &amp; Solar</div></div>
+      <div class="stat-cell"><div class="n"><span class="accent counter" data-count="28" data-since="1998">0</span>+</div><div class="l">Years in Power Conversion &amp; Solar</div></div>
       <div class="stat-cell"><div class="n"><span class="counter" data-count="35000">0</span>+</div><div class="l">Projects Completed</div></div>
       <div class="stat-cell"><div class="n"><span class="counter" data-count="120">0</span>+</div><div class="l">Team Members</div></div>
       <div class="stat-cell"><div class="n">ISO <span class="accent">9001</span></div><div class="l">Certified Since 2006</div></div>
@@ -560,7 +568,7 @@
 
     <div class="case">
       <div class="case-media">
-        <img src="assets/images/residential-solar-installation.jpg" alt="Residential rooftop solar installation" />
+        <img loading="lazy" decoding="async" src="assets/images/residential-solar-installation.jpg" alt="Residential rooftop solar installation" />
         <span class="case-meta-tag mono">March 2025</span>
       </div>
       <div class="case-copy">
@@ -573,7 +581,7 @@
 
     <div class="case rev">
       <div class="case-media">
-        <img src="assets/images/commercial-solar-installation.jpg" alt="Commercial rooftop solar installation" />
+        <img loading="lazy" decoding="async" src="assets/images/commercial-solar-installation.jpg" alt="Commercial rooftop solar installation" />
         <span class="case-meta-tag mono">January 2024</span>
       </div>
       <div class="case-copy">
@@ -586,7 +594,7 @@
 
     <div class="case">
       <div class="case-media">
-        <img src="assets/images/large-scale-solar-installation.jpg" alt="Large-scale solar installation" />
+        <img loading="lazy" decoding="async" src="assets/images/large-scale-solar-installation.jpg" alt="Large-scale solar installation" />
         <span class="case-meta-tag mono">December 2024</span>
       </div>
       <div class="case-copy">
@@ -604,17 +612,17 @@
     <div class="trust-head">
       <span class="eyebrow">Who We Serve</span>
       <h2>Trusted with power infrastructure by institutions that don't take chances</h2>
-      <p>Railways, refineries, telecom, textiles, government supply — served for 28+ years.</p>
+      <p>Railways, refineries, telecom, textiles, government supply — served for <span data-since="1998">28</span>+ years.</p>
     </div>
     <div class="client-grid">
-      <div class="client-cell"><img src="assets/images/southern-railway.jpg" alt="Railway infrastructure"><div class="client-meta"><div class="sector">Railways</div><div class="cname">Southern Railway</div></div></div>
-      <div class="client-cell"><img src="assets/images/reliance-industries.jpg" alt="Industrial plant"><div class="client-meta"><div class="sector">Industry</div><div class="cname">Reliance Industries</div></div></div>
-      <div class="client-cell"><img src="assets/images/hindustan-petroleum-corp.jpg" alt="Refinery"><div class="client-meta"><div class="sector">Petroleum</div><div class="cname">Hindustan Petroleum Corp.</div></div></div>
-      <div class="client-cell"><img src="assets/images/bsnl.jpg" alt="Telecom tower"><div class="client-meta"><div class="sector">Telecom</div><div class="cname">BSNL</div></div></div>
-      <div class="client-cell"><img src="assets/images/kitex.jpg" alt="Textile factory"><div class="client-meta"><div class="sector">Textiles</div><div class="cname">Kitex</div></div></div>
-      <div class="client-cell"><img src="assets/images/kerala-civil-supplies-corp.jpg" alt="Warehouse and supply"><div class="client-meta"><div class="sector">Public Supply</div><div class="cname">Kerala Civil Supplies Corp.</div></div></div>
-      <div class="client-cell"><img src="assets/images/kerala-books-publications.jpg" alt="Printing press"><div class="client-meta"><div class="sector">Publishing</div><div class="cname">Kerala Books &amp; Publications</div></div></div>
-      <div class="client-cell"><img src="assets/images/anna-group-of-companies.jpg" alt="Metal industry plant"><div class="client-meta"><div class="sector">Aluminium</div><div class="cname">Anna Group of Companies</div></div></div>
+      <div class="client-cell"><img loading="lazy" decoding="async" src="assets/images/southern-railway.jpg" alt="Railway infrastructure"><div class="client-meta"><div class="sector">Railways</div><div class="cname">Southern Railway</div></div></div>
+      <div class="client-cell"><img loading="lazy" decoding="async" src="assets/images/reliance-industries.jpg" alt="Industrial plant"><div class="client-meta"><div class="sector">Industry</div><div class="cname">Reliance Industries</div></div></div>
+      <div class="client-cell"><img loading="lazy" decoding="async" src="assets/images/hindustan-petroleum-corp.jpg" alt="Refinery"><div class="client-meta"><div class="sector">Petroleum</div><div class="cname">Hindustan Petroleum Corp.</div></div></div>
+      <div class="client-cell"><img loading="lazy" decoding="async" src="assets/images/bsnl.jpg" alt="Telecom tower"><div class="client-meta"><div class="sector">Telecom</div><div class="cname">BSNL</div></div></div>
+      <div class="client-cell"><img loading="lazy" decoding="async" src="assets/images/kitex.jpg" alt="Textile factory"><div class="client-meta"><div class="sector">Textiles</div><div class="cname">Kitex</div></div></div>
+      <div class="client-cell"><img loading="lazy" decoding="async" src="assets/images/kerala-civil-supplies-corp.jpg" alt="Warehouse and supply"><div class="client-meta"><div class="sector">Public Supply</div><div class="cname">Kerala Civil Supplies Corp.</div></div></div>
+      <div class="client-cell"><img loading="lazy" decoding="async" src="assets/images/kerala-books-publications.jpg" alt="Printing press"><div class="client-meta"><div class="sector">Publishing</div><div class="cname">Kerala Books &amp; Publications</div></div></div>
+      <div class="client-cell"><img loading="lazy" decoding="async" src="assets/images/anna-group-of-companies.jpg" alt="Metal industry plant"><div class="client-meta"><div class="sector">Aluminium</div><div class="cname">Anna Group of Companies</div></div></div>
     </div>
   </div>
 </section>
@@ -682,7 +690,7 @@
       <h3>Explore</h3>
       <ul>
         <li><a href="#eligibility">Check Eligibility</a></li>
-        <li><a href="#services">Our Clients</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#projects">Recent Work</a></li>
         <li><a href="#quote">Request a Quote</a></li>
       </ul>
@@ -693,14 +701,6 @@
       <ul>
         <li>Panampilly Nagar,<br>Ernakulam, Kerala</li>
         <li><a href="mailto:voltekindus@gmail.com">voltekindus@gmail.com</a></li>
-      </ul>
-    </div>
-
-    <div class="footer-col">
-      <h3>Branch</h3>
-      <ul>
-        <!-- TODO: replace with the real branch address before this goes live -->
-        <li>Branch address to be added</li>
       </ul>
     </div>
 
@@ -732,20 +732,26 @@
 
 <script>
   (function(){
-    var counters = document.querySelectorAll('.counter, .num[data-count]');
+    // Years in business, so "28+" doesn't go stale. The markup keeps a static fallback.
+    document.querySelectorAll('[data-since]').forEach(function(el){
+      var years = new Date().getFullYear() - parseInt(el.getAttribute('data-since'), 10);
+      if (el.hasAttribute('data-count')) el.setAttribute('data-count', years);
+      else el.textContent = years;
+    });
+
+    var counters = document.querySelectorAll('.counter');
     var animated = new WeakSet();
     function animate(el){
       if(animated.has(el)) return; animated.add(el);
       var target = parseInt(el.getAttribute('data-count'), 10);
-      var suffix = el.getAttribute('data-suffix') || '';
       var dur = 1400, start = null;
       function step(ts){
         if(!start) start = ts;
         var p = Math.min((ts - start) / dur, 1);
         var eased = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.floor(eased * target).toLocaleString('en-IN') + suffix;
+        el.textContent = Math.floor(eased * target).toLocaleString('en-IN');
         if(p < 1) requestAnimationFrame(step);
-        else el.textContent = target.toLocaleString('en-IN') + suffix;
+        else el.textContent = target.toLocaleString('en-IN');
       }
       requestAnimationFrame(step);
     }
@@ -859,12 +865,20 @@
       var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       var isDown = false, startX = 0, startScroll = 0, autoplay = !reduceMotion, resumeTimer = null, last = null;
       var speed = 40; // px/sec
+      // Float position: browsers may snap scrollLeft to whole pixels, and at 40px/s on a
+      // 120-144Hz screen each frame's step is under 1px, so `scrollLeft += step` can stall.
+      var pos = 0, running = false, visible = true;
 
       function halfWidth(){ return track.scrollWidth / 2; }
-      function normalize(){
+      function wrap(x){
         var hw = halfWidth();
-        if (marquee.scrollLeft <= 1) marquee.scrollLeft += hw;
-        else if (marquee.scrollLeft >= hw * 2 - marquee.clientWidth - 1) marquee.scrollLeft -= hw;
+        if (x <= 1) return x + hw;
+        if (x >= hw * 2 - marquee.clientWidth - 1) return x - hw;
+        return x;
+      }
+      function normalize(){
+        var x = wrap(marquee.scrollLeft);
+        if (x !== marquee.scrollLeft) { marquee.scrollLeft = x; pos = x; }
       }
       function pauseAutoplay(){ autoplay = false; clearTimeout(resumeTimer); }
       function scheduleResume(){
@@ -873,15 +887,30 @@
         resumeTimer = setTimeout(function(){ autoplay = true; }, 1800);
       }
       function tick(ts){
+        if (!visible) { running = false; return; }
         if (last === null) last = ts;
-        var dt = (ts - last) / 1000;
+        var dt = Math.min((ts - last) / 1000, 0.1); // no jump after a background tab
         last = ts;
-        if (autoplay && !isDown) { marquee.scrollLeft += speed * dt; normalize(); }
+        if (autoplay && !isDown) { pos = wrap(pos + speed * dt); marquee.scrollLeft = pos; }
+        else pos = marquee.scrollLeft;
+        requestAnimationFrame(tick);
+      }
+      function start(){
+        if (reduceMotion || running) return;
+        running = true; last = null;
         requestAnimationFrame(tick);
       }
 
       marquee.scrollLeft = 1;
-      requestAnimationFrame(tick);
+      pos = marquee.scrollLeft;
+      // Only animate while on screen, rather than burning a frame loop all page long.
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function(entries){
+          visible = entries[0].isIntersecting;
+          if (visible) start();
+        }).observe(marquee);
+      }
+      start();
 
       marquee.addEventListener('mouseenter', pauseAutoplay);
       marquee.addEventListener('mouseleave', function(){ if (!isDown) scheduleResume(); });
