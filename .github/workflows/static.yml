@@ -31,13 +31,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      # This deploy is a client preview. index.html in the repo stays production-ready
+      # for voltekindustries.co.in; only the deployed copy is adjusted.
+      - name: Build preview site
+        run: |
+          mkdir _site
+          cp -r index.html voltek-logo.jpg assets CNAME _site/
+          host=$(tr -d '[:space:]' < CNAME)
+          sed -i \
+            -e 's#<meta name="robots" content="index, follow">#<meta name="robots" content="noindex, nofollow">#' \
+            -e "s#https://voltekindustries.co.in/#https://$host/#g" \
+            _site/index.html
+          # Fail the deploy rather than publish an indexable preview.
+          grep -q 'content="noindex, nofollow"' _site/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: '.'
+          # Site files only, so repo and tool files aren't published
+          path: '_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
